@@ -1,0 +1,279 @@
+@import url('bower_components/bootstrap/dist/css/bootstrap.min.css');
+@import url('bower_components/flexboxgrid/dist/flexboxgrid.min.css');
+@import url('bower_components/font-awesome/css/font-awesome.min.css');
+@import 'nib'
+@require 'mixin'
+@require '__variables'
+@require 'reset'
+
+global-reset()
+
+//universal-----------------------------------
+.wrapper
+  background $col-bodybg
+.text-primehead
+  font 600 22px/24px $font-novecento
+  color $col-textprimegray
+  a&:hover
+    color $col-green
+.text-head
+  @extend .text-primehead
+  font-size 18px
+  line-height 18px
+.text-desc
+  font 400 16px/24px $font-helvet
+  color $col-textsubgray
+  a&:hover
+    color $col-green
+.btn-green
+  font 600 14px/40px $font-novecento
+  color $col-white
+  padding 0 20px
+  min-width 135px
+  background $col-green
+  border none
+  &:hover
+    background $col-middlegray
+.navbar-brand
+  font 400 40px/18px $font-pacific
+  color $col-middlegray
+
+//header----------------------------------------
+.prime-header
+  .navbar-header
+    padding-top 40px
+    padding-bottom 36px
+    border-bottom 1px solid $col-bordergray
+    width 100%
+    > button
+      border-color darken($col-middlegray, 25%)
+      .icon-bar
+        background $col-green
+        height 3px
+      @media (max-width 768px)
+        margin-left 80px
+  .top-menu
+    margin-left -15px
+    @media (min-width 768px)
+      width: calc(100% + 30px);
+      display: flex;
+      justify-content: space-between;
+    li
+      &:first-child > a
+        padding-left 0
+      a
+        color $col-middlegray
+        font 600 18px $font-novecento
+        white-space nowrap
+        @media (min-width 768px) and (max-width 1023px)
+          font-size 11px
+          padding-left 8px
+          padding-right 8px
+        @media (min-width 1023px) and (max-width 1199px)
+          font-size 15px
+          padding-left 10px
+          padding-right 10px
+        &:hover
+          color $col-green
+    .search-label
+      position relative
+      padding 15px 0 15px 15px
+      text-align center
+      width 100%
+      > .search-submit
+        opacity 0
+        border 2px solid $col-middlegray
+        height 20px
+        border-radius 5px
+        width 90%
+        color $col-middlegray
+        font 600 14px/20px $font-novecento
+        @media (min-width 768px)
+          max-width 152px
+        &:focus
+          opacity 1
+          transition opacity 1s ease
+          & + span
+            font-size 14px
+            line-height 20px
+      > span
+        position absolute
+        right 5px
+        width 20px
+        height 20px
+        font-size 20px
+        color $col-middlegray
+.soc-block
+  @media (min-width 768px) and (max-width 991px)
+    margin-right 20px
+  > li
+    border-radius 50%
+    background $col-lightgray
+    &:not(:last-of-type)
+      margin-right 10px
+    > a
+      width 34px
+      height 34px
+      color $col-white
+      display flex
+      justify-content center
+      align-items center
+      &:hover
+        color $col-middlegray
+//main------------------------------------------------
+.prime-content
+  .current-page-big
+    background url("./img/pagename-bg.png") no-repeat center top
+    background-size cover
+    height 100px
+  .current-page-name
+    font 600 36px/18px $font-novecento
+    color $col-bodybg
+  .page-desc-info
+    padding 60px 0
+    > p
+      max-width 840px
+      margin auto
+    & > *:not(:last-child)
+      margin-bottom 25px
+    &.info-top
+      border-bottom 1px solid $col-bordergray
+    &.info-bottom
+      border-top 1px solid $col-bordergray
+  .portfolio-viewbox
+    background: linear-gradient(to bottom, $col-viewboxbg 72%, $col-bodybg 72%) repeat-y;
+    background-size 100% 424px
+  .portfolio-item
+    width 354px
+    margin-bottom 80px
+    > h5
+      margin-top 30px
+    > p.text-desc
+      margin 17px 0 28px
+  .notebook-module
+    position relative
+    > figure
+      &:before
+        content url("./img/note-opac.png")
+        display block
+        position absolute
+        right 47px
+        top 16px
+        z-index 2
+      &:after
+        content ""
+        display block
+        width 260px
+        height 149px
+        position absolute
+        top 16px
+        right 47px
+    .notebook-add
+      position absolute
+      z-index 3
+      top 16px
+      right 47px
+      width 260px
+      height 149px
+      visibility hidden
+      opacity 0
+      transition opacity 1s ease
+      background rgba($col-bodybg, .75)
+      > .click-add
+        width 52px
+        height 52px
+        background $col-notebookAdd
+        > span
+          font-size 25px
+          color $col-bodybg
+    &:hover .notebook-add
+      visibility visible
+      opacity 1
+  .view-change
+    margin 60px 0
+    li:not(:first-child)
+      a
+        &:before
+          content "/"
+          display inline-block
+          margin 0 10px
+        &:hover:before
+          color $col-middlegray
+//footer----------------------------------------------
+.prime-footer
+  background $col-primefooter
+  padding-top 45px
+  .text-desc
+    font-size 14px
+  .text-head
+    color $col-bodybg
+    margin-bottom 16px
+  .soc-block > li
+    &:hover
+      background $col-white
+    > a
+      color $col-middlegray
+  .footer-inn
+    > *
+      margin-bottom 55px
+      &:not(:last-child)
+        padding-right 50px
+    .soc-block + p
+      margin-top 16px
+    .navbar-brand
+      padding-left 0
+    address
+      margin-bottom 10px
+    .bot-menu
+      > li
+        &:before
+          content:"\f054"
+          display inline-block
+          font: normal normal normal 14px/1 FontAwesome;
+          color $col-bodybg
+          margin-right 10px
+    .email-form
+      margin-top 28px
+      .input-email
+        border none
+        background $col-emailinput
+        height 40px
+        width 160px
+        padding-left 16px
+      > button
+        height 40px
+        padding 0 15px
+        border-radius 0
+        margin-top: -2px;
+        margin-bottom: 0;
+        font-size 14px
+        border none
+        background $col-textsubgray
+    & + .row.center-xs
+      width 100%
+      padding 30px 0
+      border-top 1px solid $col-textsubgray
+      > address
+        color $col-textsubgray
+        font-size 12px
+        > span
+          color $col-bodybg
+  .view-footlinks
+    a
+      font-size 12px
+      color $col-textsubgray
+      &:hover
+        color $col-green
+    li:not(:first-child)
+      a
+        &:before
+          content "/"
+          display inline-block
+          margin 0 10px
+        &:hover:before
+          color $col-textsubgray
+//-----------------------------------
+
+
+
+
