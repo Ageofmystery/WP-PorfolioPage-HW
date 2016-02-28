@@ -152,6 +152,19 @@ global-reset()
       margin-top 30px
     > p.text-desc
       margin 17px 0 28px
+    &:first-child,
+    &:nth-child(1n+2)
+      figure
+        &:after
+          background $col-dispblue
+    &:nth-child(3n+2)
+      figure
+        &:after
+          background $col-dispgreen
+    &:nth-child(3n)
+      figure
+        &:after
+          background $col-disporange
   .notebook-module
     position relative
     > figure
