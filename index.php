@@ -26,9 +26,8 @@
                     while (have_posts()) {
                         the_post(); ?>
                         <div class="portfolio-item">
-                            <h5 class="text-uppercase"><a class="text-head" href="<?php the_permalink(); ?>">Pure
-                                    Homes </a></h5>
-                            <div class="text-desc"><?php the_content(); ?></div>
+                            <h5 class="text-uppercase"><a class="text-head" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <div class="text-desc"><?php the_excerpt(); ?></div>
                             <div class="notebook-module">
                                 <figure>
                                     <img class="notebook-full"

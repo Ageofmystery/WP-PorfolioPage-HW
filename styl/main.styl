@@ -147,10 +147,12 @@ global-reset()
     background-size 100% 424px
   .portfolio-item
     width 354px
+    height 344px
+    position relative
     margin-bottom 80px
     > h5
       margin-top 30px
-    > p.text-desc
+    > .text-desc
       margin 17px 0 28px
     &:first-child,
     &:nth-child(1n+2)
@@ -166,7 +168,8 @@ global-reset()
         &:after
           background $col-disporange
   .notebook-module
-    position relative
+    position absolute
+    top 145px
     > figure
       &:before
         content url("./img/note-opac.png")

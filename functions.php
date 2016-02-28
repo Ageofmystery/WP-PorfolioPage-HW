@@ -10,7 +10,7 @@ if (function_exists('add_theme_support')) add_theme_support('post-thumbnails');
 
 register_nav_menus([
 	'primary' => 'Header',
-	'social' => 'Footer',
+	'secondary' => 'Footer',
 ]);
 
 function addClassToLinks($className) {
@@ -35,3 +35,8 @@ register_sidebar([
 	'before_title' => '<h5 class="text-uppercase aside-head">',
 	'after_title' => "</h5>\n",
 ]);
+
+function new_excerpt_length($length) {
+	return 10;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
