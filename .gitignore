@@ -38,3 +38,5 @@ Thumbs.db
 .idea
 bower_components
 node_modules
+css
+final.css

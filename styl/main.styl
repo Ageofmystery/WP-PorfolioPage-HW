@@ -14,7 +14,7 @@ global-reset()
 .text-primehead
   font 600 22px/24px $font-novecento
   color $col-textprimegray
-  a&:hover
+  a&:hover,&>a:hover
     color $col-green
 .text-head
   @extend .text-primehead
@@ -23,7 +23,7 @@ global-reset()
 .text-desc
   font 400 16px/24px $font-helvet
   color $col-textsubgray
-  a&:hover
+  a&:hover,&>a:hover
     color $col-green
 .btn-green
   font 600 14px/40px $font-novecento
@@ -37,6 +37,8 @@ global-reset()
 .navbar-brand
   font 400 40px/18px $font-pacific
   color $col-middlegray
+  &:hover
+    color $col-green
 
 //header----------------------------------------
 .prime-header
