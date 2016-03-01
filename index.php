@@ -12,11 +12,13 @@
     </div>
     <div class="container">
         <ul class="view-change row">
-            <li><a href="#" class="text-head text-uppercase">All</a></li>
-            <li><a href="#" class="text-head text-uppercase">Web design</a></li>
-            <li><a href="#" class="text-head text-uppercase">Free bies</a></li>
-            <li><a href="#" class="text-head text-uppercase">Photography</a></li>
-            <li><a href="#" class="text-head text-uppercase">Print</a></li>
+            <?php
+            $args = array(
+                'style'              => 'list',
+                'title_li'           => '',
+                'taxonomy'           => 'genre',
+            );
+            wp_list_categories( $args ); ?>
         </ul>
     </div>
     <section class="portfolio-viewbox">
@@ -26,7 +28,7 @@
                     while (have_posts()) {
                         the_post(); ?>
                         <div class="portfolio-item">
-                            <h5 class="text-uppercase"><a class="text-head" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <h5 class="text-uppercase text-head"><?php the_title(); ?></h5>
                             <div class="text-desc"><?php the_excerpt(); ?></div>
                             <div class="notebook-module">
                                 <figure>

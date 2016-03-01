@@ -1,6 +1,3 @@
-@import url('bower_components/bootstrap/dist/css/bootstrap.min.css');
-@import url('bower_components/flexboxgrid/dist/flexboxgrid.min.css');
-@import url('bower_components/font-awesome/css/font-awesome.min.css');
 @import 'nib'
 @require 'mixin'
 @require '__variables'
@@ -63,6 +60,8 @@ global-reset()
     li
       &:first-child > a
         padding-left 0
+      &.current-menu-item > a
+        color $col-green
       a
         color $col-middlegray
         font 600 18px $font-novecento
@@ -150,9 +149,9 @@ global-reset()
     height 344px
     position relative
     margin-bottom 80px
-    > h5
+    h5
       margin-top 30px
-    > .text-desc
+    .text-desc
       margin 17px 0 28px
     &:first-child,
     &:nth-child(1n+2)
@@ -290,8 +289,16 @@ global-reset()
           margin 0 10px
         &:hover:before
           color $col-textsubgray
-//-----------------------------------
-
+//special-----------------------------------
+body.single
+  .portfolio-item
+    width 100%
+    height auto
+    display flex
+    justify-content space-between
+  .notebook-module
+    position relative
+    top 30px
 
 
 
