@@ -13,10 +13,11 @@
     <div class="container">
         <ul class="view-change row">
             <?php
+            $taxonomy = 'genre';
             $args = array(
                 'style'              => 'list',
                 'title_li'           => '',
-                'taxonomy'           => 'genre',
+                'taxonomy'           => $taxonomy,
             );
             wp_list_categories( $args ); ?>
         </ul>
@@ -27,6 +28,10 @@
                 <?php if (have_posts()) :
                     while (have_posts()) {
                         the_post(); ?>
+<!--                --><?php
+//                $queryPost = new WP_Query( array( 'post_type' => 'portfolio', 'project-type' => get_query_var('genre')) );
+//                if ( $queryPost->have_posts() ) {
+//                    while ( $queryPost->have_posts() ) : $queryPost->the_post(); ?>
                         <div class="portfolio-item">
                             <h5 class="text-uppercase text-head"><?php the_title(); ?></h5>
                             <div class="text-desc"><?php the_excerpt(); ?></div>
@@ -42,6 +47,10 @@
                                 </div>
                             </div>
                         </div>
+<!--                --><?php //endwhile;
+//                    wp_reset_postdata();
+//                };
+//                 ?>
                     <?php };
                 else :
                     echo '<p class="text-center article-desc">Empty</p>';

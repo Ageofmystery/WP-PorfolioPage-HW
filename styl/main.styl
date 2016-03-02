@@ -208,6 +208,11 @@ global-reset()
       opacity 1
   .view-change
     margin 60px 0
+    li.current-cat
+      > a
+        color $col-green
+        &:before
+          color $col-middlegray
     li:not(:first-child)
       a
         &:before
