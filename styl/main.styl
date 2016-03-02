@@ -155,16 +155,13 @@ global-reset()
       margin 17px 0 28px
     &:first-child,
     &:nth-child(1n+2)
-      figure
-        &:after
+      .notebook-thumb
           background $col-dispblue
     &:nth-child(3n+2)
-      figure
-        &:after
+      .notebook-thumb
           background $col-dispgreen
     &:nth-child(3n)
-      figure
-        &:after
+      .notebook-thumb
           background $col-disporange
   .notebook-module
     position absolute
@@ -177,14 +174,16 @@ global-reset()
         right 47px
         top 16px
         z-index 2
-      &:after
-        content ""
-        display block
-        width 260px
-        height 149px
-        position absolute
-        top 16px
-        right 47px
+    .notebook-thumb
+      display block
+      width 260px
+      height 149px
+      position absolute
+      top 16px
+      right 47px
+      &>img
+        width inherit
+        height inherit
     .notebook-add
       position absolute
       z-index 3
@@ -295,15 +294,6 @@ global-reset()
         &:hover:before
           color $col-textsubgray
 //special-----------------------------------
-body.single
-  .portfolio-item
-    width 100%
-    height auto
-    display flex
-    justify-content space-between
-  .notebook-module
-    position relative
-    top 30px
 
 
 

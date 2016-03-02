@@ -25,13 +25,10 @@
     <section class="portfolio-viewbox">
         <div class="container">
             <div class="portfolio-items row center-xs between-sm">
-                <?php if (have_posts()) :
-                    while (have_posts()) {
-                        the_post(); ?>
-<!--                --><?php
-//                $queryPost = new WP_Query( array( 'post_type' => 'portfolio', 'project-type' => get_query_var('genre')) );
-//                if ( $queryPost->have_posts() ) {
-//                    while ( $queryPost->have_posts() ) : $queryPost->the_post(); ?>
+                <?php
+                $queryPost = new WP_Query( array('post_type' => 'portfolio', $taxonomy => get_query_var($taxonomy)));
+                if ( $queryPost->have_posts() ) {
+                    while ( $queryPost->have_posts() ) : $queryPost->the_post(); ?>
                         <div class="portfolio-item">
                             <h5 class="text-uppercase text-head"><?php the_title(); ?></h5>
                             <div class="text-desc"><?php the_excerpt(); ?></div>
@@ -40,6 +37,7 @@
                                     <img class="notebook-full"
                                          src="<?php bloginfo('template_directory'); ?>/img/notebook-module.png"
                                          width="354" height="200" alt="Notebook">
+                                    <span class="notebook-thumb"><?php the_post_thumbnail();?></span>
                                 </figure>
                                 <div class="notebook-add row center-xs middle-xs">
                                     <div class="click-add row center-xs middle-xs"><span class="fa fa-plus"></span>
@@ -47,14 +45,11 @@
                                 </div>
                             </div>
                         </div>
-<!--                --><?php //endwhile;
-//                    wp_reset_postdata();
-//                };
-//                 ?>
-                    <?php };
-                else :
+                <?php endwhile;
+                    wp_reset_postdata();
+                } else {
                     echo '<p class="text-center article-desc">Empty</p>';
-                endif; ?>
+                }; ?>
             </div>
         </div>
     </section>
